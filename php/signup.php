@@ -16,7 +16,7 @@
                 <div id="menuHolder">
                     <div id="textHolder">
                         <ul id="navbar">
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="../index.php">Home</a></li>
                             <li><a href="meanPlan.php">Meal Plan</a></li>
                             <li><a href="textbook.php">Textbook</a></li>
                             <li><a href="tech.php">Technology</a></li>
