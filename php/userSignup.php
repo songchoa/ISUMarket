@@ -33,10 +33,9 @@
 
 			$sql = "INSERT INTO users (username, password) VALUES ( '$signupUsername', '$signupPassword' )";
 			if ($conn->query($sql) === TRUE) {
-				echo "User sign up successfully";
 				$_SESSION["username"] = $signupUsername;
-				$_SESSION["status"] = "Logout";
-				echo '<a href="../index.php">home</a>';
+				$_SESSION["status"] = "logout";
+				header('Location: http://localhost/www/ISUMarket/php/home.php');
 			} else {
 				echo "Error: " . $conn->connect_error;
 			}

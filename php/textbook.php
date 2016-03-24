@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,14 +18,33 @@
                 <div id="menuHolder">
                     <div id="textHolder">
                         <ul id="navbar">
-                            <li><a href="../index.php">Home</a></li>
-                            <li><a href="php/meanPlan.php">Meal Plan</a></li>
-                            <li><a href="php/textbook.php" class="active">Textbook</a></li>
-                            <li><a href="php/tech.php">Technology</a></li>
-                            <li><a href="php/others.php">Others</a></li>
-                            <li style="float: right;"><a href="login.php">Login or Signup</a></li>
+                            <li><a href="home.php" >Home</a></li>
+                            <li><a href="meanPlan.php">Meal Plan</a></li>
+                            <li><a href="textbook.php" class="active">Textbook</a></li>
+                            <li><a href="tech.php">Technology</a></li>
+                            <li><a href="others.php">Others</a></li>
+                            <li style="float: right;"> 
+
+                            <?php 
+
+                            if ($_SESSION['status'] === "login") {
+                                    echo '<a href="login.php"> Login or signup</a>';
+                                } else {
+                                    echo '<a href="logout.php"> Log out</a>';
+                                }
+
+                            ?>
+                           
+                            </li>
+                            <p style="float: right; color: red;">Welcome, 
+                                <?php 
+                                echo $_SESSION['username'];
+                                 ?>
+                            </p>
+                            
                         </ul>
                     </div>
+
                 </div> <!-- menuHolder -->
             </div> <!-- headerWrapper -->
         </div>  <!-- header -->

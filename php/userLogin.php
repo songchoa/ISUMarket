@@ -1,6 +1,7 @@
 <?php
 	session_start();
 
+
 	$serverName = "localhost:3306";
 	$username = "root";
 	$password = "";
@@ -26,11 +27,10 @@
 		$row = $result->fetch_assoc();
 
 		if($row["password"] === $loginPassword) {
-			echo "welcom.";
 			$_SESSION['username'] = $loginUsername;
-			$_SESSION["status"] = "Logout";
+			$_SESSION["status"] = "logout";
 			echo $_SESSION["username"];
-			echo "<a href= " . "'../index.php'" . ">"."home"."</a>";
+			header('Location: http://localhost/www/ISUMarket/php/home.php');
 		} else {
 			echo "password not correct.";
 		}
