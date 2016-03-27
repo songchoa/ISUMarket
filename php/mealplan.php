@@ -1,0 +1,117 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <title>ISU Market - TEXTBOOK</title>
+    <link rel="stylesheet" href="../css/mainStyle.css" type="text/css"> 
+    <script type="text/javascript" src="../javascript/popup.js"></script>
+</head>
+
+<body>
+    <div id="mainContainer">
+        <div id="header">
+            <div id="headerWrapper">
+                <div id="imageHolder">
+                    <img src="../images/isumarketlogo.png" width="180px" height="60px">
+                </div>
+
+                <div id="menuHolder">
+                    <div id="textHolder">
+                        <ul id="navbar">
+                            <li><a href="home.php" >Home</a></li>
+                            <li><a href="mealplan.php" class="active">Meal Plan</a></li>
+                            <li><a href="textbook.php">Textbook</a></li>
+                            <li><a href="tech.php">Technology</a></li>
+                            <li><a href="others.php">Others</a></li>
+                            <li style="float: right;"> 
+
+                            <?php 
+
+                            if ($_SESSION['status'] === "login") {
+                                    echo '<a href="login.php"> Login or signup</a>';
+                                } else {
+                                    echo '<a href="logout.php"> Log out</a>';
+                                }
+
+                            ?>
+                           
+                            </li>
+                            <p style="float: right; color: red;">Welcome, 
+                                <?php 
+                                echo $_SESSION['username'];
+                                 ?>
+                            </p>
+                            
+                        </ul>
+                    </div>
+
+                </div> <!-- menuHolder -->
+            </div> <!-- headerWrapper -->
+        </div>  <!-- header -->
+
+        <div id="mainContent">
+            <div id="contentHolder">
+                <div id="contentHeader">
+                    <h1 class="subheader">Meal Plan</h1>
+                </div>
+                <div>
+                    <table>
+                        <tr class="book 1">
+                            <th>
+                                <img src="../images/isumarketlogo.png" width="180px" height="120px">
+                            </th>
+
+                            <th>
+                                <a class="title" href="asdflkjlk">Caculus II</a>
+                                <p>A very good book but very hard to learn.</p>
+                              
+                            </th>
+                        </tr>
+
+                        <tr class="book 2">
+                            <th>
+                                <img src="../images/isumarketlogo.png" width="180px" height="120px">
+                            </th>
+
+                            <th>
+                                <a class="title" href="asdflkjlk">Caculus II</a>
+                                <p>A very good book but very hard to learn.</p>
+                                
+                            </th>
+                        </tr> 
+
+             			
+
+                        <tr>
+                        	<th>
+                        		<p>&nbsp;</p>
+
+                        		<button type="button" class="btn btn-info" data-toggle="modal" data-backdrop="static" data-keyboard = "false" data-target="#myModal" onclick="popup()">Post Your Item</button>
+
+
+                        	</th>
+                        	
+                        </tr>
+
+
+                    </table>
+
+
+                </div>
+                          
+
+            </div> <!-- contentHolder -->   
+        </div> <!-- mainContent -->
+
+    </div> <!-- mainContainer -->
+
+</body>
+
+
+</html>
