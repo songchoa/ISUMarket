@@ -22,7 +22,7 @@
     				<div id="textHolder">
     					<ul id="navbar">
     						<li><a href="home.php" class="active">Home</a></li>
-    						<li><a href="meanPlan.php">Meal Plan</a></li>
+    						<li><a href="mealplan.php">Meal Plan</a></li>
     						<li><a href="textbook.php">Textbook</a></li>
     						<li><a href="tech.php">Technology</a></li>
     						<li><a href="others.php">Others</a></li>
