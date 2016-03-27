@@ -11,6 +11,8 @@
 </head>
 <body>
 
-<center><h1>Log out successfully.</h1></center>
+<center>
+<h1>Log out successfully.</h1>
+</center>
 </body>
 </html>
