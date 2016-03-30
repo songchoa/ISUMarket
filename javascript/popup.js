@@ -57,11 +57,11 @@ function popup() {
 
 
 	var uploadform_image_div_input = document.createElement("INPUT");
-	uploadform_image_div_input.setAttribute("type","form");
+	uploadform_image_div_input.setAttribute("type","file");
 	uploadform_image_div_input.setAttribute("class","form-control");
-	uploadform_image_div_input.setAttribute("id","image");
+	uploadform_image_div_input.setAttribute("id","fileToUpload");
 	uploadform_image_div_input.setAttribute("placeholder","image not uploaded");
-	uploadform_image_div_input.setAttribute("name","imageupload");
+	uploadform_image_div_input.setAttribute("name","fileToUpload");
 
 	uploadform_image_div.appendChild(uploadform_image_div_label);
 	uploadform_image_div.appendChild(uploadform_image_div_input);
