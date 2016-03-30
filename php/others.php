@@ -28,9 +28,9 @@
                         <ul id="navbar">
                             <li class="tab"><a href="home.php" >Home</a></li>
                             <li class="tab"><a href="mealplan.php">Meal Plan</a></li>
-                            <li class="tab"><a href="textbook.php" class="active">Textbook</a></li>
+                            <li class="tab"><a href="textbook.php" >Textbook</a></li>
                             <li class="tab"><a href="technology.php">Technology</a></li>
-                            <li class="tab"><a href="others.php">Others</a></li>
+                            <li class="tab"><a href="others.php" class="active">Others</a></li>
                             <li style="float: right;"> 
 
                             <?php 
@@ -64,12 +64,12 @@
 
         <div class="container-fluid">
                 <div id="contentHeader">
-                    <h1 class="subheader">TEXTBOOK</h1>
+                    <h1 class="subheader">OTHERS</h1>
                 </div>
                 <?php
                     include('connectDB.php');
                     
-                    $myquery = "SELECT * FROM textbook";
+                    $myquery = "SELECT * FROM others";
                     $result = $dbconn->query($myquery);
 
                     if(!$result) {
@@ -111,7 +111,6 @@
         </div> <!-- mainContent -->
 
     </div> <!-- mainContainer -->
-
 </body>
 
 </html>

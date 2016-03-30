@@ -1,26 +1,15 @@
 <?php
 	session_start();
 
-
-	$serverName = "localhost:3306";
-	$username = "root";
-	$password = "";
-	$dbName = "isumarket";
-
-	//establish connection
-	$conn = new mysqli($serverName,$username,$password,$dbName);
-
-	//verify connection
-	if($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
+	include('connectDB.php');
+	
 
 	//Get information from registration form
 	$loginUsername = $_POST['loginusername'];
 	$loginPassword = $_POST['loginpassword'];
 
 	$sql = "SELECT * FROM users WHERE username = '$loginUsername'";
-	$result = $conn->query($sql);
+	$result = $dbconn->query($sql);
 
 	if($result->num_rows > 0) {
 
@@ -40,6 +29,6 @@
 		echo "user does not exist.";
 	}
 
-	$conn->close();
+	$dbconn->close();
 
 ?>

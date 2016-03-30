@@ -28,8 +28,8 @@
                         <ul id="navbar">
                             <li class="tab"><a href="home.php" >Home</a></li>
                             <li class="tab"><a href="mealplan.php">Meal Plan</a></li>
-                            <li class="tab"><a href="textbook.php" class="active">Textbook</a></li>
-                            <li class="tab"><a href="technology.php">Technology</a></li>
+                            <li class="tab"><a href="textbook.php" >Textbook</a></li>
+                            <li class="tab"><a href="technology.php" class="active">Technology</a></li>
                             <li class="tab"><a href="others.php">Others</a></li>
                             <li style="float: right;"> 
 
@@ -61,15 +61,15 @@
         </div>
         <div id="cardinalsilk">         
         </div>
-
+        
         <div class="container-fluid">
                 <div id="contentHeader">
-                    <h1 class="subheader">TEXTBOOK</h1>
+                    <h1 class="subheader">TECHNOLOGY</h1>
                 </div>
                 <?php
                     include('connectDB.php');
                     
-                    $myquery = "SELECT * FROM textbook";
+                    $myquery = "SELECT * FROM technology";
                     $result = $dbconn->query($myquery);
 
                     if(!$result) {
@@ -109,8 +109,6 @@
                 </div>
    
         </div> <!-- mainContent -->
-
-    </div> <!-- mainContainer -->
 
 </body>
 

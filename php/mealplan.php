@@ -18,17 +18,17 @@
         <div id="header">
             <div id="headerWrapper">
                 <div id="imageHolder">
-                    <img src="../images/isumarketlogo.png" width="180px" height="60px">
+                    <img src="../images/isumarketlogo2.PNG" width="180px" height="60px">
                 </div>
 
                 <div id="menuHolder">
                     <div id="textHolder">
                         <ul id="navbar">
-                            <li><a href="home.php" >Home</a></li>
-                            <li><a href="mealplan.php" class="active">Meal Plan</a></li>
-                            <li><a href="textbook.php">Textbook</a></li>
-                            <li><a href="tech.php">Technology</a></li>
-                            <li><a href="others.php">Others</a></li>
+                            <li class="tab"><a href="home.php" >Home</a></li>
+                            <li class="tab"><a href="mealplan.php" class="active">Meal Plan</a></li>
+                            <li class="tab"><a href="textbook.php">Textbook</a></li>
+                            <li class="tab"><a href="technology.php">Technology</a></li>
+                            <li class="tab"><a href="others.php">Others</a></li>
                             <li style="float: right;"> 
 
                             <?php 
@@ -42,7 +42,7 @@
                             ?>
                            
                             </li>
-                            <p style="float: right; color: red;">Welcome, 
+                            <p class="welcome" style="float: right">Welcome, 
                                 <?php 
                                 echo $_SESSION['username'];
                                  ?>
@@ -55,61 +55,69 @@
             </div> <!-- headerWrapper -->
         </div>  <!-- header -->
 
-        <div id="mainContent">
-            <div id="contentHolder">
+        <div id="goldsilk">        	
+        </div>
+        <div id="cardinalsilk">       	
+        </div>
+
+        <div class="container-fluid">
                 <div id="contentHeader">
-                    <h1 class="subheader">Meal Plan</h1>
+                    <h1 class="subheader">MEAL PLAN</h1>
                 </div>
-                <div>
-                    <table>
-                        <tr class="book 1">
-                            <th>
-                                <img src="../images/isumarketlogo.png" width="180px" height="120px">
-                            </th>
+                <?php
+                	include('connectDB.php');
+					
+					$myquery = "SELECT * FROM mealplan";
+					$result = $dbconn->query($myquery);
 
-                            <th>
-                                <a class="title" href="asdflkjlk">Caculus II</a>
-                                <p>A very good book but very hard to learn.</p>
-                              
-                            </th>
-                        </tr>
+					if(!$result) {
+						die("query failed" . mysql_error());
+					}
 
-                        <tr class="book 2">
-                            <th>
-                                <img src="../images/isumarketlogo.png" width="180px" height="120px">
-                            </th>
+					while ($row = $result->fetch_assoc()) {
+						echo '<div class = "row">'; #row
 
-                            <th>
-                                <a class="title" href="asdflkjlk">Caculus II</a>
-                                <p>A very good book but very hard to learn.</p>
+                		echo '<div class = "col-sm-3">'; # img
+                		echo '<img src = "../images/' . $row['picture'] . '" ' . 'width = "180px" ' . 'height = "120px">';
+                		echo '</div>'; # img end
+
+                		echo '<div class = "col-sm-9">'; # intro 
+                		echo '<a href="#">' . $row['title'] . '</a>';
+                		echo '<p>' . $row['intro'] . '</p>';
+                		echo '</div>'; # intro end
+
+                		echo '</div>'; # row end
+
+					}
+           
+                	$dbconn->close();
+                ?>
+
+                <div id="postitembutton">
+                	<p>&nbsp;</p>
+
+                    <?php
+
+                    if($_SESSION["status"] === "logout") {
+                        echo '<button type="button" class="btn btn-info" data-toggle="modal" data-backdrop="static" data-keyboard = "false" data-target="#myModal" onclick="popup()">Post Your Item Here</button>';
+                    }
+                    
+                    ?>
                                 
-                            </th>
-                        </tr> 
-
-             			
-
-                        <tr>
-                        	<th>
-                        		<p>&nbsp;</p>
-
-                        		<button type="button" class="btn btn-info" data-toggle="modal" data-backdrop="static" data-keyboard = "false" data-target="#myModal" onclick="popup()">Post Your Item</button>
-
-
-                        	</th>
-                        	
-                        </tr>
-
-
-                    </table>
-
-
                 </div>
-                          
-
-            </div> <!-- contentHolder -->   
+   
         </div> <!-- mainContent -->
 
     </div> <!-- mainContainer -->
+
+    
+    <div id="footercontainer">
+
+    	<div id="footerwrapper">
+    		
+    	</div>
+    	
+    </div>
 
 </body>
 

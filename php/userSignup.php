@@ -2,18 +2,7 @@
 	
 	session_start();
 
-	$serverName = "localhost:3306";
-	$username = "root";
-	$password = "";
-	$dbName = "isumarket";
-
-	//establish connection
-	$conn = new mysqli($serverName,$username,$password,$dbName);
-
-	//verify connection
-	if($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	}
+	include('connectDB.php');
 
 	//Get information from registration form
 	$signupUsername = $_POST['signupusername'];
@@ -23,7 +12,7 @@
 	if($signupPassword === $confirmSignupPassword) {
 
 		$sql = "SELECT * FROM users WHERE username = '$signupUsername'";
-		$result = $conn->query($sql);
+		$result = $dbconn->query($sql);
 
 		if ($result->num_rows > 0) {
 
@@ -32,12 +21,12 @@
 		} else {
 
 			$sql = "INSERT INTO users (username, password) VALUES ( '$signupUsername', '$signupPassword' )";
-			if ($conn->query($sql) === TRUE) {
+			if ($dbconn->query($sql) === TRUE) {
 				$_SESSION["username"] = $signupUsername;
 				$_SESSION["status"] = "logout";
 				header('Location: http://localhost/www/ISUMarket/php/home.php');
 			} else {
-				echo "Error: " . $conn->connect_error;
+				echo "Error: " . $dbconn->connect_error;
 			}
 	
 		}
@@ -50,6 +39,6 @@
 	// echo $signupUsername;
 	//echo "success";
 
-	$conn->close();
+	$dbconn->close();
 
 ?>
