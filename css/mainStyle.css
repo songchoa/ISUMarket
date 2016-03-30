@@ -5,14 +5,14 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #BD2031;
     position: absolute;
     left: 220px;
     top: 22px;
     width: 80%;
 }
 
-li {
+li.tab{
     float: left;
 }
 
@@ -25,11 +25,13 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    color: #BD2031;
+    background-color: #FFD700;
 }
 
 .active {
-    background-color: #4CAF50;
+    color:#BD2031; 
+    background-color: #FFD700;
 }
 
 #imageHolder {
@@ -40,8 +42,8 @@ li a:hover:not(.active) {
 
 #headerWrapper {
     height: 100px;
-    width: 80%;
-    background: green;
+    width: 100%;
+    background: #33334d;
 }
 
 body {
@@ -49,15 +51,16 @@ body {
 }
 
 .subheader {
-    /*position: absolute;
-    left: 220px;
-    color: orange;*/
-    background-color:black;
-    width: 80%;
+    position: relative;
+    left: 150px;
+    top: 0px;
+    background-color:#33334d;
+    width: 75%;
     color:white;
     text-align:center;
-    padding:5px;
-}
+    border-radius: 25px;
+/*    padding:5px;
+*/}
 
 div.book {
     position: relative;
@@ -66,27 +69,70 @@ div.book {
 
 }
 
-table {
-    position: relative;
-    top: 20px;
-    left: 220px;
-}   
 
-th {
+
+table,th, td {
+    border: 1px solid black;
+    padding: 1px;
+}
+
+table {
+    border-spacing: 20px;
+    width: 100%;
+} 
+
+/*th {
 
     text-align: left;
     vertical-align: top;
+}*/
+
+
+p.welcome {
+    color: #FFD700;
+    font-weight: bold;
+    position: relative;
+    top: 14px;
 }
 
-tr :hover {
-    background: green;
+#cardinalsilk {
+    width: 100%;
+    height: 10px;
+    background-color: #FFD700;
 }
 
-.floating {
-    display: inline-block;
-    background-color: red;
-    width: 180px;
-    height: 140px;
-    margin: 10px;
-    border: 3px solid #73AD21;
+#goldsilk {
+    width: 100%;
+    height: 10px;
+    background-color: #BD2031;
+}
+
+#footerwrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #33334d;
+  color: white;
+  text-align: center;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 35%;
+      margin: auto;
+}
+.row {
+    position: relative;
+    left: 180px;
+    width: 71%;
+}
+.row:hover {
+    background-color: white;
+}
+#postitembutton {
+    position: relative;
+    left: 190px;
 }
