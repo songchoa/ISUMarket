@@ -107,16 +107,23 @@ p.welcome {
     background-color: #BD2031;
 }
 
-#footerwrapper {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+/*#footerwrapper {
+  
+  position: relative;
+  top: 60px;
   height: 20px;
-  background-color: #33334d;
-  color: white;
+  background-color: black;
+  color: black;
   text-align: center;
+}
+*/
+.panel-footer {
+    position: relative;
+    top: 60px;
+    background-color: #33334d;
+    color: white;
+    text-align: center;
+    font-weight: bold;
 }
 
 .carousel-inner > .item > img,
