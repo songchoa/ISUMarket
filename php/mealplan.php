@@ -11,6 +11,7 @@
     <title>ISU Market - TEXTBOOK</title>
     <link rel="stylesheet" href="../css/mainStyle.css" type="text/css"> 
     <script type="text/javascript" src="../javascript/popup.js"></script>
+
 </head>
 
 <body>
@@ -78,7 +79,7 @@
 						echo '<div class = "row">'; #row
 
                 		echo '<div class = "col-sm-3">'; # img
-                		echo '<img src = "../images/' . $row['picture'] . '" ' . 'width = "180px" ' . 'height = "120px">';
+                		echo '<img src = "../uploads/' . $row['picture'] . '" ' . 'width = "180px" ' . 'height = "120px">';
                 		echo '</div>'; # img end
 
                 		echo '<div class = "col-sm-9">'; # intro 
@@ -93,17 +94,19 @@
                 	$dbconn->close();
                 ?>
 
-                <div id="postitembutton">
+               <div id="postitembutton">
                 	<p>&nbsp;</p>
 
                     <?php
 
+                    $_SESSION['recent'] = "mealplan";
+
                     if($_SESSION["status"] === "logout") {
                         echo '<button type="button" class="btn btn-info" data-toggle="modal" data-backdrop="static" data-keyboard = "false" data-target="#myModal" onclick="popup()">Post Your Item Here</button>';
                     }
-                    
+
                     ?>
-                                
+
                 </div>
    
         </div> <!-- mainContent -->
@@ -112,9 +115,8 @@
 
     
     <div id="footercontainer">
-
     	<div id="footerwrapper">
-    		
+    		<div class="panel-footer">This is the footer</div>
     	</div>
     	
     </div>
