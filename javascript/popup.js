@@ -34,18 +34,12 @@ function popup() {
 	var div4 = document.createElement("DIV");
 	div4.setAttribute("class","modal-body");
 	var form = document.createElement("FORM");
-	form.setAttribute("action","additem.php");
+	form.setAttribute("action","upload.php");
+	form.setAttribute("enctype","multipart/form-data");
 	form.setAttribute("method","post");
 ////
 
-// Upload image form	
-	var uploadform = document.createElement("FORM");
-	uploadform.setAttribute("action","upload.php");
-	uploadform.setAttribute("method","post");
-	uploadform.setAttribute("enctype","multipart/form-data");
-	uploadform.setAttribute("class","form-inline");
-	uploadform.setAttribute("role","form");
-
+// Build the composed form
 	var uploadform_image_div = document.createElement("DIV");
 	uploadform_image_div.setAttribute("class","form-group");
 
@@ -66,20 +60,8 @@ function popup() {
 	uploadform_image_div.appendChild(uploadform_image_div_label);
 	uploadform_image_div.appendChild(uploadform_image_div_input);
 
-	var uploadform_submit = document.createElement("BUTTON");
-	uploadform_submit.setAttribute("type","submit");
-	uploadform_submit.setAttribute("class","btn btn-info");
-	var uploadform_submit_label = document.createTextNode("upload");
-	uploadform_submit.appendChild(uploadform_submit_label);
-	uploadform.appendChild(uploadform_image_div);
-	uploadform.appendChild(uploadform_submit);
-//// 
 
-// Description form 	
-	var descform = document.createElement("FORM");
-	descform.setAttribute("class","form-vertical");
-	descform.setAttribute("role","form");
-	
+
 	var formgroup_title = document.createElement("DIV");
 	formgroup_title.setAttribute("class","form-group");
 	var formgroup_title_label = document.createElement("LABEL");
@@ -90,13 +72,12 @@ function popup() {
 	formgroup_title_input.setAttribute("type","text");
 	formgroup_title_input.setAttribute("class","form-control");
 	formgroup_title_input.setAttribute("id","title");
+	formgroup_title_input.setAttribute("name","title");
 	formgroup_title_input.setAttribute("placeholder","Enter the post title");
 	formgroup_title.appendChild(formgroup_title_label);
 	formgroup_title.appendChild(formgroup_title_input);
 
 	
-	descform.appendChild(formgroup_title);
-
 	var formgroup_intro = document.createElement("DIV");
 	formgroup_intro.setAttribute("class","form-group");
 	var formgroup_intro_label = document.createElement("LABEL");
@@ -108,11 +89,11 @@ function popup() {
 	formgroup_intro_input.setAttribute("type","text");
 	formgroup_intro_input.setAttribute("class","form-control");
 	formgroup_intro_input.setAttribute("id","intro");
+	formgroup_intro_input.setAttribute("name","intro");
 	formgroup_intro_input.setAttribute("placeholder","Enter the brief introductino to your item");
 	formgroup_intro.appendChild(formgroup_intro_label);
 	formgroup_intro.appendChild(formgroup_intro_input);
 
-	descform.appendChild(formgroup_intro);
 
 	var formgroup_price = document.createElement("DIV");
 	formgroup_price.setAttribute("class","form-group");
@@ -124,11 +105,11 @@ function popup() {
 	formgroup_price_input.setAttribute("type","text");
 	formgroup_price_input.setAttribute("class","form-control");
 	formgroup_price_input.setAttribute("id","price");
+	formgroup_price_input.setAttribute("name","price");
 	formgroup_price_input.setAttribute("placeholder","Enter the a price for your item");
 	formgroup_price.appendChild(formgroup_price_label);
 	formgroup_price.appendChild(formgroup_price_input);
 
-	descform.appendChild(formgroup_price);
 
 	var formgroup_contact = document.createElement("DIV");
 	formgroup_contact.setAttribute("class","form-group");
@@ -139,19 +120,22 @@ function popup() {
 	var formgroup_contact_input = document.createElement("INPUT");
 	formgroup_contact_input.setAttribute("type","text");
 	formgroup_contact_input.setAttribute("class","form-control");
-	formgroup_contact_input.setAttribute("id","Contact");
+	formgroup_contact_input.setAttribute("id","contact");
+	formgroup_contact_input.setAttribute("name","contact");
 	formgroup_contact_input.setAttribute("placeholder","Enter your contact information");
 	formgroup_contact.appendChild(formgroup_contact_label);
 	formgroup_contact.appendChild(formgroup_contact_input);
 
-	descform.appendChild(formgroup_contact);
+
 ////
 
 // Submit and cancel button
-	var form_submit = document.createElement("INPUT");
+	var form_submit = document.createElement("BUTTON");
 	form_submit.setAttribute("type","submit");
-	form_submit.setAttribute("value","submit");
 	form_submit.setAttribute("class","btn btn-success");
+	var form_submit_label = document.createTextNode("Submit");
+	form_submit.appendChild(form_submit_label);
+
 
 	var close_button = document.createElement("INPUT");
 	close_button.setAttribute("type","button");
@@ -161,8 +145,12 @@ function popup() {
 ////
 
 // Attach all 'divs' to main container
-	form.appendChild(uploadform);
-	form.appendChild(descform);
+
+	form.appendChild(formgroup_title);
+	form.appendChild(formgroup_intro);
+	form.appendChild(formgroup_price);
+	form.appendChild(formgroup_contact);
+	form.appendChild(uploadform_image_div);
 	form.appendChild(form_submit);
 	form.appendChild(close_button);
 	div4.appendChild(form);
