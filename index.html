@@ -2,13 +2,55 @@
 <html>
 <head>
 	<title>Welcom</title>
+	<style type="text/css">
+		body {
+			background-color: #33334d;
+		}
+
+		.modeSelect{
+			background-color: #cccccc;
+			border-radius: 25px;
+			height: 200px;
+			width: 700px;
+			position: relative;
+			left: 300px;
+			top: 80px;
+		}
+
+		.isumarketlogo {
+			position: relative;
+			top: 100px;
+			left: 360px;
+		}
+
+		h1 {
+			font-family: verdana;
+			position: relative;
+			top: 20px;
+		}
+
+		.loginOrVisitor > a{
+			position: relative;
+			top: 20px;
+			font-size: 22px;
+			color: green;
+		}
+
+	</style>
 </head>
 <body>
+<div class="isumarketlogo"> <img src="images/isumarketlogo2.png" width="600px;" height="150px;"></div>
+<div class="modeSelect">
 <center>
-<h1>Welcom to ISUMarket</h1>
-<a href="php/login.php">Please login,</a>
-<a href="php/visitorLogin.php">Or just have a look as a visitor?</a>
+<h1><b>Welcom to ISUMarket</b></h1>
+<div class="loginOrVisitor">
+	<a href="php/login.php">Please login,</a>
+	<a href="php/visitorLogin.php">Or just have a look as a visitor?</a>
+</div>
+
 </center>
+</div>
+
 
 </body>
 </html>
