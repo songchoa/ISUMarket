@@ -59,8 +59,8 @@ body {
     color:white;
     text-align:center;
     border-radius: 25px;
-/*    padding:5px;
-*/}
+    padding:5px;
+}
 
 div.book {
     position: relative;
@@ -68,25 +68,6 @@ div.book {
     left: 220px;
 
 }
-
-
-
-table,th, td {
-    border: 1px solid black;
-    padding: 1px;
-}
-
-table {
-    border-spacing: 20px;
-    width: 100%;
-} 
-
-/*th {
-
-    text-align: left;
-    vertical-align: top;
-}*/
-
 
 p.welcome {
     color: #FFD700;
@@ -107,25 +88,13 @@ p.welcome {
     background-color: #BD2031;
 }
 
-/*#footerwrapper {
-  
-  position: relative;
-  top: 60px;
-  height: 20px;
-  background-color: black;
-  color: black;
-  text-align: center;
-}
-*/
 .panel-footer {
     position: relative;
-    top: 60px;
+    top: 100px;
     background-color: #33334d;
-    color: white;
     text-align: center;
-    font-weight: bold;
+    color: white;
 }
-
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 35%;
@@ -136,10 +105,38 @@ p.welcome {
     left: 180px;
     width: 71%;
 }
+
 .row:hover {
     background-color: white;
 }
 #postitembutton {
+
     position: relative;
+    top: 30px;
     left: 190px;
+}
+
+#loginbutton {
+    width: 288px;
+}
+
+#logindiv {
+    position: absolute;
+    background-position: center;
+    top: 160px;
+    width: 100%;
+    background-color: #FFD700;
+}
+
+
+#logincontainerwrapper {
+    position: relative;
+    height: 350px;
+    background-color: #BD2031;
+    top: 120px;
+}
+
+.errormsg {
+    font-weight: bold;
+    color: #BD2031;
 }
