@@ -8,6 +8,17 @@
 <html>
 <head>
 	<title>Log out information</title>
+	<style type="text/css">
+	h1 {
+		position: relative;
+		top: 200px;
+		color: #ffd700;
+	}
+
+	body {
+		background-color: #33334d;
+	}
+	</style>
 </head>
 <body>
 
